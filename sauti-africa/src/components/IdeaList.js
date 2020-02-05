@@ -21,7 +21,7 @@ const IdeaList = ({ ideas, updateIdeas, history }) => {
   const saveEdit = e => {
     e.preventDefault();
     axiosWithAuth()
-      .put(`/ideas/${ideas.id}`, ideaToEdit)
+      .put(`real-sauti-studio.herokuapp.com/api/inputs/:${id}`, ideaToEdit)
       .then(res => {  
         ideas.pop(ideaToEdit)
         updateIdeas([...ideas, res.data])
@@ -32,7 +32,7 @@ const IdeaList = ({ ideas, updateIdeas, history }) => {
 
   const deleteIdea = idea => {
     axiosWithAuth()
-      .delete(`/ideas/${idea.id}`)
+      .delete(`real-sauti-studio.herokuapp.com/api/inputs/:${id}`)
       .then(res => {
         console.log(res)
         
@@ -40,12 +40,12 @@ const IdeaList = ({ ideas, updateIdeas, history }) => {
       .catch(err => {
         console.log(err)
       })
-      history.push("/ideas")
+      history.push(" real-sauti-studio.herokuapp.com/api/inputs")
   };
 
   const addIdea = idea =>[
     axiosWithAuth()
-      .post("/api/ideas", idea)
+      .post(" real-sauti-studio.herokuapp.com/api/inputs", idea)
       .then(res => {
         console.log(res)
       })
