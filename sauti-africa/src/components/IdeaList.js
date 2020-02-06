@@ -21,7 +21,7 @@ const IdeaList = ({ ideas, updateIdeas, history }) => {
   const saveEdit = e => {
     e.preventDefault();
     axiosWithAuth()
-      .put(`real-sauti-studio.herokuapp.com/api/inputs/:${id}`, ideaToEdit)
+      .put(`https://real-sauti-studio.herokuapp.com/api/inputs/:${id}`, ideaToEdit)
       .then(res => {  
         ideas.pop(ideaToEdit)
         updateIdeas([...ideas, res.data])
@@ -32,7 +32,7 @@ const IdeaList = ({ ideas, updateIdeas, history }) => {
 
   const deleteIdea = idea => {
     axiosWithAuth()
-      .delete(`real-sauti-studio.herokuapp.com/api/inputs/:${id}`)
+      .delete(`https://real-sauti-studio.herokuapp.com/api/inputs/:${id}`)
       .then(res => {
         console.log(res)
         
@@ -40,12 +40,12 @@ const IdeaList = ({ ideas, updateIdeas, history }) => {
       .catch(err => {
         console.log(err)
       })
-      history.push(" real-sauti-studio.herokuapp.com/api/inputs")
+      history.push("/dashboard")
   };
 
   const addIdea = idea =>[
     axiosWithAuth()
-      .post(" real-sauti-studio.herokuapp.com/api/inputs", idea)
+      .post("https://real-sauti-studio.herokuapp.com/api/inputs", idea)
       .then(res => {
         console.log(res)
       })
@@ -121,27 +121,6 @@ const IdeaList = ({ ideas, updateIdeas, history }) => {
       <h3>Add A New Idea</h3>
       <form onSubmit={() => addIdea(newIdea)}>
         <label htmlFor="idea">New Idea</label>
-        <input
-        id="idea"
-        name="idea"
-        type="text"
-        placeholder="New Idea"
-        value={newIdea.idea}
-        onChange={e =>
-          setNewIdea({ ...newIdea, [e.target.name]: e.target.value })
-        }
-        />
-       <label htmlFor="idea">New Location</label>
-        <input
-        id="location"
-        name="location"
-        type="text"
-        placeholder="New Location"
-        value={newIdea.location}
-        onChange={e =>
-          setNewIdea({ ...newIdea, [e.target.name]: e.target.value })
-        }
-        />
         <label htmlFor="idea">New Description</label>
         <input
         id="description"
@@ -153,6 +132,28 @@ const IdeaList = ({ ideas, updateIdeas, history }) => {
           setNewIdea({ ...newIdea, [e.target.name]: e.target.value })
         }
         />
+         <label htmlFor="idea">New Location</label>
+        <input
+        id="location"
+        name="location"
+        type="text"
+        placeholder="New Location"
+        value={newIdea.location}
+        onChange={e =>
+          setNewIdea({ ...newIdea, [e.target.name]: e.target.value })
+        }
+        />
+        <input
+        id="idea"
+        name="idea"
+        type="text"
+        placeholder="New Idea"
+        value={newIdea.idea}
+        onChange={e =>
+          setNewIdea({ ...newIdea, [e.target.name]: e.target.value })
+        }
+        />
+
         <button type ="submit">Add New Idea</button>
       </form>
     </div>

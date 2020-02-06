@@ -13,3 +13,19 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
+.links-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.links{
+  margin:2%;
+  background-color: #e84c3d ;
+  padding:2%;
+  width: 10rem;
+  color: white;
+  font-size: 2rem;
+  border-radius: 5px;
+}

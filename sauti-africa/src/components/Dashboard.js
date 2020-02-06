@@ -8,7 +8,7 @@ const Dashboard = props => {
   
   useEffect(() => {
       axiosWithAuth()
-        .get('real-sauti-studio.herokuapp.com/api/inputs')
+        .get('https://real-sauti-studio.herokuapp.com/api/inputs')
         .then(response => {
           setIdeaList(response.data);
         })

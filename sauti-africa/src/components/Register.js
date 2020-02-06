@@ -21,10 +21,10 @@ class Register extends React.Component {
   register = e => {
     e.preventDefault();
     axios
-      .post('real-sauti-studio.herokuapp.com/api/auth/register', this.state.credentials)
+      .post('https://real-sauti-studio.herokuapp.com/api/auth/register', this.state.credentials)
       .then(res => {
         localStorage.setItem('token', res.data.payload);
-        this.props.history.push('real-sauti-studio.herokuapp.com/api/users');
+        this.props.history.push('https://real-sauti-studio.herokuapp.com/api/users');
       })
       .catch(err => console.log(err));
   };
