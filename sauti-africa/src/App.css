@@ -29,3 +29,19 @@
   font-size: 2rem;
   border-radius: 5px;
 }
+
+.card-container{
+  width: 90%;
+  margin:auto;
+  display: flex;
+ flex-wrap: wrap;
+}
+.idea-card{
+  padding:2%;
+  border: 5px solid #e84c3d;
+  background-color: black;
+  color: white;
+  width:20%;
+  margin:2%;
+
+}

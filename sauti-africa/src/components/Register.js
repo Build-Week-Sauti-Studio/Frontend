@@ -20,10 +20,12 @@ class Register extends React.Component {
   
   register = e => {
     e.preventDefault();
+    console.log("reg creds", this.state.credentials)
     axios
       .post('https://real-sauti-studio.herokuapp.com/api/auth/register', this.state.credentials)
       .then(res => {
-        localStorage.setItem('token', res.data.payload);
+          console.log("register", res.data)
+        // localStorage.setItem('token', res.data.password);
         this.props.history.push('https://real-sauti-studio.herokuapp.com/api/users');
       })
       .catch(err => console.log(err));

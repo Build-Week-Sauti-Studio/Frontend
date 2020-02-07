@@ -3,17 +3,16 @@ import React from "react";
 
 const Ideas = props => {
     return (
-    <div className="card-container">
-    {props.ideas.map(newIdea => (
-        <div className="idea-card" key={newIdea.id}>
-            <h3>New Idea Card</h3>
-            <h4>{newIdea.name}</h4>
-            <p>{newIdea.location}</p>
-            <p>{newIdea.description}</p>
+        <div className="idea-card" key={props.idea.id}>
+            <h2>Idea Card</h2>
+            <h3>Idea Name:</h3>
+            <p> {props.idea.idea}</p>
+            <h4>Idea Location: </h4>
+            <p>{props.idea.location}</p>
+            <h4>Description:</h4>
+            <p>{props.idea.description}</p>
             
         </div>
-    ))}
-    </div>
     )
 }
 

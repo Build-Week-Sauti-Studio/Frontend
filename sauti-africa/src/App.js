@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -7,10 +8,16 @@ import PrivateRoute from './components/PrivateRoute'
 import './App.css';
 
 
+import {IdeaContext} from "./contexts/IdeaContext";
+
+// , updateIdeas, history
+
 function App() {
+  const [ideas] = useState();
   return (
     <Router>
     <div className="App">
+    <IdeaContext.Provider value={{ ideas }}>
     <div className="header">
         <h1>Welcome to Sauti Studio </h1>
       </div>
@@ -23,7 +30,9 @@ function App() {
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       </Switch>
+      </IdeaContext.Provider>
     </div>
+  
   </Router>
   );
 }
