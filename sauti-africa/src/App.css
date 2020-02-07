@@ -34,14 +34,25 @@
   width: 90%;
   margin:auto;
   display: flex;
- flex-wrap: wrap;
+  flex-wrap: wrap;
+  height:20rem;
+ 
 }
 .idea-card{
   padding:2%;
   border: 5px solid #e84c3d;
   background-color: black;
   color: white;
-  width:20%;
+  width:20rem;
   margin:2%;
 
+}
+
+.card-button{
+  width: 5rem;
+  background-color:#e84c3d;
+  font-size: 1rem;
+  border-radius: 3px;
+  margin:1%;
+  font-size: 1.5rem;
 }
