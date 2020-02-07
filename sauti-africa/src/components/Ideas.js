@@ -4,15 +4,15 @@ import React from "react";
 const Ideas = props => {
     return (
     <div className="card-container">
-    {props.ideas.map(newIdea => (
-        <div className="idea-card" key={newIdea.id}>
-            <h3>New Idea Card</h3>
-            <h4>{newIdea.name}</h4>
-            <p>{newIdea.location}</p>
-            <p>{newIdea.description}</p>
+
+        <div className="idea-card" key={props.idea.id}>
+            <h3>Idea Card</h3>
+            <h4>{props.idea.name}</h4>
+            <p>{props.idea.location}</p>
+            <p>{props.idea.description}</p>
             
         </div>
-    ))}
+    
     </div>
     )
 }
