@@ -31,8 +31,10 @@
 }
 
 .card-container{
- margin:2%;
- width:90%;
+  width: 90%;
+  margin:auto;
+  display: flex;
+ flex-wrap: wrap;
 }
 .idea-card{
   padding:2%;
@@ -40,5 +42,6 @@
   background-color: black;
   color: white;
   width:20%;
+  margin:2%;
 
 }

@@ -5,20 +5,6 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Dashboard = props => {
   const [ideaList, setIdeaList] = useState([]);
-  
-  useEffect(() => {
-      axiosWithAuth()
-        .get('https://real-sauti-studio.herokuapp.com/api/inputs')
-        .then(response => {
-          setIdeaList(response.data);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-  }, []);
-    
-  
-
   return (
     <>
      <Link to="/"> Home </Link> 

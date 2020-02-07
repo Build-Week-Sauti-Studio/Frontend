@@ -56,6 +56,7 @@ const IdeaList = () => {
       .catch(err => {
         console.log(err)
       })
+      history.push('/inputs');
     }
   useEffect(() => {
     axiosWithAuth()
@@ -84,13 +85,12 @@ const IdeaList = () => {
 
   return (
     <div>
-      <div>
+      <div className="card-container">
         {data.map(idea => {
           return (
             <Ideas key ={idea.id} idea={idea}/>
           )
         })}
-        {/* <Ideas idea={{name:"fake", location:"fake2", description:"fake3"}}/> */}
         </div>
         
       {/* {editing && (
@@ -142,7 +142,6 @@ const IdeaList = () => {
     
         <h3>Add A New Idea</h3>
         <form onSubmit={() => addIdea(newIdea)}>
-          <label htmlFor="idea">New Idea</label>
           <label htmlFor="idea">New Description</label>
           <input
           id="description"
