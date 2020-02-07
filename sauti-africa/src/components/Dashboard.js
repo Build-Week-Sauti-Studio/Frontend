@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {Link } from "react-router-dom";
 import IdeaList from "./IdeaList";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+
 
 const Dashboard = props => {
   const [ideaList, setIdeaList] = useState([]);
