@@ -26,9 +26,10 @@ function App() {
         <Link className="links" to="/register">Register</Link> 
       </div>
       <Switch>
-      <PrivateRoute path="/dashboard" component={Dashboard} />
+      
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
+      <PrivateRoute path="/dashboard" component={Dashboard} />
       </Switch>
       </IdeaContext.Provider>
     </div>
