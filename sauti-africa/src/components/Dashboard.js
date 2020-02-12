@@ -1,14 +1,7 @@
-// import React, { useState } from "react";
-// import {Link } from "react-router-dom";
-// import IdeaList from "./IdeaList";
-
 import React, { useState, useEffect } from "react";
-// import {  useParams } from 'react-router-dom';
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-// import axios from "axios";
-// import {IdeaContext} from "../contexts/IdeaContext";
+
 const initialIdea = {
-  // id: Date.now(),
   description: "",
   location: "",
   idea: ""
@@ -16,9 +9,7 @@ const initialIdea = {
 
 const Dashboard = ({ ideas }) => {
   console.log(ideas);
-  // const { ideas, updateIdeas, history } = useContext(IdeaContext);
   const [data, setData]=useState([initialIdea])
-  // const { id } = useParams();
   const [editing, setEditing] = useState(false);
   const [ideaToEdit, setIdeaToEdit] = useState(initialIdea);
   const [newIdea, setNewIdea] = useState(initialIdea);
@@ -35,7 +26,6 @@ const Dashboard = ({ ideas }) => {
       .catch(err => {
         console.log(err.response)
       })
-      // history.push("/dashboard")
   };
 
   const saveEdit = e => {
@@ -51,7 +41,6 @@ const Dashboard = ({ ideas }) => {
       })
       .catch(err => {
         console.log(err.response)})
-        // history.push('/inputs');
       }
 
   const addIdea = idea => {
